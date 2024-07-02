@@ -75,7 +75,8 @@ wp-config-sample.php
 
 # Ignore wp-content/themes except for your custom themes
 /wp-content/themes/*
-!/wp-content/themes/my-custom-theme/
+!/wp-content/themes/foce-child/
+!/wp-content/themes/foce/
 
 # Ignore WordPress security keys
 wp-content/authkeys.php

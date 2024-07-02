@@ -1,0 +1,776 @@
+@charset "UTF-8";
+/* ==========================================================================
+   MIXINS
+   ========================================================================== */
+/* mixin pour l'animation des fleurs
+   ========================================================================== */
+/* mixin pour l'animation d'entrée des sections, des titres et du menu de navigation
+   ========================================================================== */
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+/* Supprime le contenu des pseudo-éléments ::before et ::after de .site-footer
+   ========================================================================== */
+.site-footer::before,
+.site-footer::after {
+  content: "";
+}
+
+/* ==========================================================================
+   BANNER-SECTION
+   ========================================================================== */
+.banner {
+  overflow: clip;
+  position: relative;
+}
+.banner__video {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+}
+.banner__logo {
+  position: sticky;
+  top: 80px;
+  margin-bottom: 1%;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   CHARACTERS-SECTION
+   ========================================================================== */
+.story #characters {
+  position: relative;
+  margin-bottom: 0;
+  z-index: 20;
+  text-align: left;
+  width: 100%;
+  flex-direction: column;
+}
+
+.story #characters div {
+  flex: none;
+  margin-bottom: 2em;
+}
+
+.story #characters h3 {
+  display: inline-block;
+}
+
+/* Characters Slider - CSS Styles
+   ========================================================================== */
+.swiper-container {
+  max-width: 100%;
+  opacity: 1;
+  margin-bottom: 7em;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.swiper-slide figure {
+  display: block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* ==========================================================================
+   Section PLACE - Pour l'Effet de parallaxe des nuages
+   ========================================================================== */
+#place {
+  background-image: url("../images/Studio_Koukaki-image_place.png") !important;
+  z-index: -1;
+}
+
+.place__big-cloud, .place__little-cloud {
+  position: absolute;
+  filter: blur(11px) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  z-index: -1;
+}
+.place__big-cloud {
+  width: 316px;
+  height: 122px;
+  top: 70px;
+  right: 85px;
+}
+.place__little-cloud {
+  width: 142px;
+  height: 55px;
+  top: 250px;
+  right: 500px;
+}
+
+/* ==========================================================================
+   AWARD-SECTION
+   ========================================================================== */
+.award-section {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 10em;
+  padding-bottom: 2.7em;
+}
+.award-section::before {
+  content: url("../images/Sunflower.png");
+  position: fixed;
+  left: 7.8em;
+  bottom: 15.5em;
+  z-index: 1;
+  box-sizing: border-box;
+}
+.award-section::after {
+  content: url("../images/orchid.png");
+  position: absolute;
+  right: -5em;
+  bottom: 21em;
+  display: inline-block;
+}
+.award-section__container {
+  position: relative;
+}
+.award-section__title {
+  position: absolute;
+  top: 47%;
+  left: 9%;
+  transform: translateY(-50%);
+  padding: 0;
+  line-height: normal;
+  text-align: left;
+  font-size: clamp(1.1rem, 2.708vw + 0.188rem, 2.625rem);
+  line-height: clamp(1.5rem, 3.188vw + 0.544rem, 3.413rem);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.award-section__title--bg {
+  width: 100%;
+  height: auto;
+}
+.award-section__logo {
+  position: relative;
+  top: 3.4em;
+  align-self: flex-start;
+}
+
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
+/* ANIMATIONS - Logo Bannière et Chats Menu
+   ========================================================================== */
+@keyframes banner__logo--up {
+  from {
+    opacity: 0;
+    transform: translateY(400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(10px, -10px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 0, 0);
+  }
+  75% {
+    transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+/* Classe CSS pour la gestion des animations du LOGO
+   ========================================================================== */
+.banner__logo--animated {
+  animation: banner__logo--up 1500ms 0ms forwards, float 9s 1.8s infinite ease-in-out;
+}
+
+/* Classe CSS pour la gestion de l'animation du BOUTON DU MENU
+   ========================================================================== */
+.menu-active .menu__button--line {
+  background-color: transparent !important;
+}
+
+.menu-active .menu__button--line::before {
+  transform: rotate(45deg) translate3d(7px, 4px, 0);
+}
+
+.menu-active .menu__button--line::after {
+  transform: rotate(-45deg) translate3d(8px, -6px, 0);
+}
+
+/* Classes CSS pour la gestion de l'apparition DU MENU
+   ========================================================================== */
+.menu__content {
+  animation: fadeInDown 1000ms ease-in-out 0.3s both;
+}
+.menu__content.menu-active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInDown 750ms ease-in-out 200ms both;
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.menu__content.menu-closing {
+  animation: fadeOutUp 1000ms ease-in-out 200ms forwards;
+}
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classe CSS pour la gestion de l'apparition des SECTIONS
+   ========================================================================== */
+.hidden-opacity {
+  opacity: 0 !important;
+}
+
+.section__fade-in--up {
+  animation: fadeInUp 900ms ease-in 0.3s both;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section__fade-in--down {
+  animation: fadeInDown 750ms ease-in 0s both;
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classe CSS pour la gestion de l'apparition des TITRES
+   ========================================================================== */
+.title__fade-in--up {
+  display: inline-block;
+  animation: fadeInUp 700ms ease-in-out 700ms both;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classes CSS pour la gestion des animations des FLEURS
+   ========================================================================== */
+.story h2::after {
+  width: 155px;
+  height: 155px;
+  animation: rotate 15s infinite linear;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.story__article::after {
+  animation: rotate 15s infinite linear;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#studio h2::before {
+  animation: rotate 15s infinite linear;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#studio h2::after {
+  animation: rotate 15s infinite linear;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.award-section::before {
+  animation: rotate 15s infinite linear;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.award-section::after {
+  animation: rotate 15s infinite linear;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.site-footer ul::after {
+  animation: rotate 15s infinite linear;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Classe CSS pour la gestion des FLEURS du MENU de NAVIGATION
+ ========================================================================== */
+.menu__content ul li::before {
+  content: "";
+  position: absolute;
+}
+.menu__content ul li:nth-child(1)::before {
+  background-image: url("../images/orchid.png");
+  right: 15em;
+  bottom: 0.5em;
+  width: 173px;
+  height: 173px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: rotate 15s infinite linear;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.menu__content ul li:nth-child(2)::before {
+  background-image: url("../images/Sunflower.png");
+  left: 11em;
+  bottom: 2em;
+  width: 216px;
+  height: 216px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: rotate 15s infinite linear;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.menu__content ul li:nth-child(3)::before {
+  background-image: url("../images/Flower.png");
+  right: 13em;
+  bottom: 0em;
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: rotate 15s infinite linear;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.menu__content ul li:nth-child(4)::before {
+  background-image: url("../images/random_flower.png");
+  left: 16.5em;
+  bottom: 4.3em;
+  width: 75px;
+  height: 75px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: rotate 15s infinite linear;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Classe CSS pour la gestion des CHATS du MENU de NAVIGATION
+   ========================================================================== */
+.menu__content {
+  overflow: hidden;
+}
+.menu__content ul li::after {
+  content: "";
+  position: absolute;
+}
+.menu__content ul li:nth-child(1)::after {
+  background-image: url("../images/Kawaneko.png");
+  right: 10.3em;
+  bottom: 0em;
+  width: 109px;
+  height: 98px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: float 6s 0.8s infinite ease-in-out;
+}
+.menu__content ul li:nth-child(2)::after {
+  background-image: url("../images/Jaakuna.png");
+  left: 10.5em;
+  top: 2em;
+  width: 154px;
+  height: 147px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: float 5s 0.3s infinite ease-in-out;
+}
+.menu__content ul li:nth-child(3)::after {
+  background-image: url("../images/Tenshi.png");
+  right: 15.5em;
+  top: 3.5em;
+  width: 105px;
+  height: 95px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: float 8s 0s infinite ease-in-out;
+}
+.menu__content ul li:nth-child(4)::after {
+  background-image: url("../images/Hibiscus.png");
+  position: absolute;
+  left: 11.5em;
+  top: 0em;
+  width: 626px;
+  height: 626px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: rotate 15s infinite linear;
+  transform-origin: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+#site-navigation {
+  padding: 10px;
+}
+
+.site-title {
+  text-align: center;
+}
+
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styles CSS pour le Bouton d'Ouverture du Menu
+   ========================================================================== */
+.menu__button {
+  position: absolute;
+  top: 34px;
+  right: calc(10vw + 15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 18px;
+  padding: 0px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.menu__button--line, .menu__button--line::before, .menu__button--line::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.menu__button--line::before {
+  top: -9px;
+}
+.menu__button--line::after {
+  top: 9px;
+}
+
+/* Styles CSS du Menu et de son contenu
+   ========================================================================== */
+.menu__content {
+  display: none;
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: calc(100vh - 80px);
+  margin-top: 9px;
+  background-color: #FFF5E9;
+  text-align: center;
+}
+.menu__content--footer {
+  margin-bottom: 40px;
+}
+.menu__content--logo {
+  width: 154px;
+  margin: 40px;
+  filter: drop-shadow(0px 0px 26.094px rgba(255, 92, 0, 0.6));
+}
+.menu__content ul {
+  display: block;
+}
+.menu__content ul li {
+  font-size: clamp(1.75rem, 3.214vw + 1.107rem, 4rem);
+  line-height: clamp(2.625rem, 3.679vw + 1.889rem, 5.2rem);
+}
+.menu__content ul li:not(:first-child) {
+  margin-top: 57px;
+}
+.menu__content ul li:hover {
+  text-shadow: 0px 0px 14px #FF5C00;
+  transition: text-shadow 0.3s ease-in;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+/* Media Queries - NAVIGATION
+   ========================================================================== */
+/* SMALL TABLET breakpoint */
+@media (max-width: 920px) {
+  #primary-menu ul li::before,
+  #primary-menu ul li::after {
+    background-image: none;
+  }
+}
+/* LARGE PHONE breakpoint */
+@media (max-width: 699px) {
+  .site-header {
+    min-height: 80px;
+  }
+  .main-navigation {
+    min-height: 80px;
+  }
+  .main-navigation .site-title {
+    opacity: 0;
+    font-size: xx-small !important;
+    min-height: 40px;
+  }
+}
+/* Media Queries - "BANNER-SECTION"
+   ========================================================================== */
+/* LARGE PHONE breakpoint */
+@media (max-width: 699px) {
+  .banner {
+    min-height: 720px !important;
+    height: auto !important;
+    width: 100vw;
+  }
+  .banner__video {
+    opacity: 0;
+  }
+  .banner img {
+    width: 76%;
+  }
+}
+/* Media Queries - "STORY-SECTION"
+   ========================================================================== */
+/* DESKTOP breakpoint */
+@media (max-width: 1500px) {
+  #story h2 {
+    width: 100%;
+  }
+}
+/* Media Queries - "CHARACTERS-SECTION"
+   ========================================================================== */
+/* LARGE PHONE breakpoint */
+@media (max-width: 699px) {
+  .story #characters {
+    max-width: 920px;
+  }
+  .story #characters h3 {
+    text-align: center;
+    display: block;
+  }
+}
+/* SMALL PHONE breakpoint */
+@media (max-width: 480px) {
+  .story #characters h3 {
+    font-size: 1.8em;
+  }
+  .swiper-slide figure img {
+    width: 60%;
+  }
+}
+/* Media Queries - "PLACE-SECTION"
+   ========================================================================== */
+/* LARGE PHONE breakpoint */
+@media (max-width: 699px) {
+  .story #place h3 {
+    text-align: center;
+  }
+}
+/* SMALL PHONE breakpoint */
+@media (max-width: 480px) {
+  .story #place h3 {
+    font-size: 2.1em;
+  }
+  .place__big-cloud, .place__little-cloud {
+    display: none;
+  }
+}
+/* Media Queries - "STUDIO-SECTION"
+   ========================================================================== */
+/* SMALL TABLET breakpoint */
+@media (max-width: 920px) {
+  #studio h2 {
+    font-size: 2rem;
+  }
+  #studio h2::before {
+    content: "";
+  }
+}
+/* Media Queries - "AWARD-SECTION"
+   ========================================================================== */
+/* DESKTOP breakpoint */
+@media (min-width: 1500px) {
+  .award-section {
+    overflow: visible;
+  }
+}
+/* TABLET breakpoint */
+@media (max-width: 1040px) {
+  .award-section {
+    flex-direction: column;
+    gap: 80px;
+  }
+  .award-section::before, .award-section::after {
+    content: "";
+  }
+  .award-section__container {
+    align-self: center;
+    max-width: 75%;
+  }
+  .award-section__logo {
+    top: 0em;
+    align-self: center;
+    width: 400px;
+  }
+}
+/* SMALL TABLET breakpoint */
+@media (max-width: 920px) {
+  .award-section__container {
+    max-width: 100%;
+  }
+}
+/* SMALL PHONE breakpoint */
+@media (max-width: 480px) {
+  .award-section {
+    margin: 0 auto;
+  }
+  .award-section__title--bg {
+    height: 110%;
+  }
+}
+/*# sourceMappingURL=theme.css.map */
