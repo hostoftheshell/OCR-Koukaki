@@ -1,0 +1,54 @@
+/* ==========================================================================
+   MIXINS
+   ========================================================================== */
+
+/* mixin pour l'animation des fleurs
+   ========================================================================== */
+@mixin flower-rotation($duration: 15s, $timing-function: linear) {
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    animation: rotate $duration infinite $timing-function;
+    transform-origin: center;
+}
+
+/* mixin pour l'animation d'entrée des sections, des titres et du menu de navigation
+   ========================================================================== */
+@mixin fadeInEntry($name, $duration: .3s, $timing: ease-out, $delay: 0s, $translateY: 20px) {
+    @keyframes #{$name} {
+        0% {
+            opacity: 0;
+            transform: translateY($translateY);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    animation: #{$name} $duration $timing $delay both;
+}
+
+@mixin fadeOutUp($duration: 1s, $timing-function: ease, $delay: 0s, $fill-mode: forwards) {
+    @keyframes fadeOutUp {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        to {
+            opacity: 0;
+            transform: translateY(-200px);
+        }
+    }
+
+    animation: fadeOutUp $duration $timing-function $delay $fill-mode;
+}

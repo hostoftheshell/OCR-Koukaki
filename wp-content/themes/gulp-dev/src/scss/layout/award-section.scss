@@ -1,0 +1,51 @@
+/* ==========================================================================
+   AWARD-SECTION
+   ========================================================================== */
+.award-section {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 10em;
+    padding-bottom: 2.7em;
+    &::before {
+        content: url('../images/Sunflower.png');
+        position: fixed;
+        left: 7.8em;
+        bottom: 15.5em;
+        
+        z-index: 1;
+        box-sizing: border-box;
+    }
+    &::after {
+        content: url('../images/orchid.png');
+        position: absolute;
+        right: -5em;
+        bottom: 21em;
+        display: inline-block;
+    }
+    &__container {
+        position: relative;
+    }
+    &__title {
+        position: absolute;
+        top: 47%;
+        left: 9%;
+        transform: translateY(-50%);
+        padding: 0;
+        line-height: normal;
+        text-align: left;
+        font-size: clamp(1.1rem, 2.708vw + 0.188rem, 2.625rem);
+        line-height: clamp(1.5rem, 3.188vw + 0.544rem, 3.413rem);
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &__title--bg {
+        width: 100%;
+        height: auto;
+    }
+    &__logo {
+        position: relative;
+        top: 3.4em;
+        align-self: flex-start;
+    }
+}

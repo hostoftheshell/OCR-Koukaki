@@ -1,0 +1,229 @@
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+/* Classe CSS pour la gestion des animations du LOGO
+   ========================================================================== */
+.banner {
+    &__logo--animated {
+        animation: banner__logo--up 1500ms 0ms forwards, float 9s 1.8s infinite ease-in-out;
+    }
+}
+
+/* Classe CSS pour la gestion de l'animation du BOUTON DU MENU
+   ========================================================================== */
+.menu-active .menu__button--line {
+    background-color: transparent !important;
+}
+
+.menu-active .menu__button--line::before {
+    transform: rotate(45deg) translate3d(7px, 4px, 0);
+}
+
+.menu-active .menu__button--line::after {
+    transform: rotate(-45deg) translate3d(8px, -6px, 0);
+}
+
+/* Classes CSS pour la gestion de l'apparition DU MENU
+   ========================================================================== */
+.menu__content {
+    &.menu-active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include fadeInEntry(fadeInDown, 750ms, ease-in-out, 200ms, -100px);
+    }
+
+    &.menu-closing {
+        @include fadeOutUp(1000ms, ease-in-out, 200ms, forwards);
+    }
+
+    @include fadeInEntry(fadeInDown, 1000ms, ease-in-out, .3s, -200px);
+}
+
+/* Classe CSS pour la gestion de l'apparition des SECTIONS
+   ========================================================================== */
+.hidden-opacity {
+    opacity: 0 !important;
+}
+
+.section__fade-in--up {
+    @include fadeInEntry(fadeInUp, 900ms, ease-in, .3s, 200px);
+}
+
+.section__fade-in--down {
+    @include fadeInEntry(fadeInDown, 750ms, ease-in, 0s, -100px);
+}
+
+/* Classe CSS pour la gestion de l'apparition des TITRES
+   ========================================================================== */
+.title__fade-in--up {
+    display: inline-block;
+    @include fadeInEntry(fadeInUp, 700ms, ease-in-out, 700ms, 100px);
+}
+
+/* Classes CSS pour la gestion des animations des FLEURS
+   ========================================================================== */
+.story {
+    h2 {
+        &::after {
+            width: 155px;
+            height: 155px;
+            @include flower-rotation;
+        }
+    }
+
+    &__article {
+        &::after {
+            @include flower-rotation;
+        }
+    }
+}
+
+#studio {
+    h2 {
+        &::before {
+            @include flower-rotation;
+        }
+
+        &::after {
+            @include flower-rotation;
+        }
+    }
+}
+
+.award-section {
+    &::before {
+        @include flower-rotation;
+    }
+
+    &::after {
+        @include flower-rotation;
+    }
+}
+
+.site-footer {
+    ul {
+        &::after {
+            @include flower-rotation;
+        }
+    }
+}
+
+/* Classe CSS pour la gestion des FLEURS du MENU de NAVIGATION
+ ========================================================================== */
+.menu__content {
+    ul {
+        li {
+            &::before {
+                content: '';
+                position: absolute;
+            }
+
+            &:nth-child(1)::before {
+                background-image: url("../images/orchid.png");
+                right: 15em;
+                bottom: 0.5em;
+                width: 173px;
+                height: 173px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                @include flower-rotation;
+            }
+
+            &:nth-child(2)::before {
+                background-image: url("../images/Sunflower.png");
+                left: 11em;
+                bottom: 2em;
+                width: 216px;
+                height: 216px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                @include flower-rotation;
+            }
+
+            &:nth-child(3)::before {
+                background-image: url("../images/Flower.png");
+                right: 13em;
+                bottom: 0em;
+                width: 70px;
+                height: 70px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                @include flower-rotation;
+            }
+
+            &:nth-child(4)::before {
+                background-image: url("../images/random_flower.png");
+                left: 16.5em;
+                bottom: 4.3em;
+                width: 75px;
+                height: 75px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                @include flower-rotation;
+            }
+        }
+    }
+}
+
+/* Classe CSS pour la gestion des CHATS du MENU de NAVIGATION
+   ========================================================================== */
+.menu__content {
+    overflow: hidden;
+
+    ul {
+        li {
+            &::after {
+                content: '';
+                position: absolute;
+            }
+
+            &:nth-child(1)::after {
+                background-image: url("../images/Kawaneko.png");
+                right: 10.3em;
+                bottom: 0em;
+                width: 109px;
+                height: 98px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                animation: float 6s 0.8s infinite ease-in-out;
+            }
+
+            &:nth-child(2)::after {
+                background-image: url("../images/Jaakuna.png");
+                left: 10.5em;
+                top: 2em;
+                width: 154px;
+                height: 147px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                animation: float 5s 0.3s infinite ease-in-out;
+            }
+
+            &:nth-child(3)::after {
+                background-image: url("../images/Tenshi.png");
+                right: 15.5em;
+                top: 3.5em;
+                width: 105px;
+                height: 95px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                animation: float 8s 0s infinite ease-in-out;
+            }
+
+            &:nth-child(4)::after {
+                background-image: url("../images/Hibiscus.png");
+                position: absolute;
+                left: 11.5em;
+                top: -0em;
+                width: 626px;
+                height: 626px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                @include flower-rotation;
+            }
+        }
+    }
+}

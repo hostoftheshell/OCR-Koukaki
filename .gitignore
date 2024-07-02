@@ -77,6 +77,7 @@ wp-config-sample.php
 /wp-content/themes/*
 !/wp-content/themes/foce-child/
 !/wp-content/themes/foce/
+!/wp-content/themes/gulp-dev/
 
 # Ignore WordPress security keys
 wp-content/authkeys.php

@@ -1,0 +1,26 @@
+// Import abstracts styles
+@import './abstracts/variables/breakpoint';
+@import './abstracts/variables/colors';
+@import './abstracts/mixins/mixins';
+// Import base styles
+@import './base/footer';
+
+
+// Import layout styles
+@import './layout/banner-section';
+@import './layout/characters-section';
+@import './layout/place-section';
+@import './layout/award-section';
+
+
+// Import animations styles
+@import './animations/keyframes';
+@import './animations/animations';
+
+// Import component styles
+@import 'components/navigation';
+
+@import './layout/media';
+// Import page styles
+// @import 'pages/';
+

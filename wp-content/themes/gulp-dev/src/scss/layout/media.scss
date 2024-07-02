@@ -1,0 +1,187 @@
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+/* Media Queries - NAVIGATION
+   ========================================================================== */
+
+/* SMALL TABLET breakpoint */
+@media (max-width: #{$breakpoint__small_tablet}) {
+
+   #primary-menu ul li::before,
+   #primary-menu ul li::after {
+      background-image: none;
+   }
+}
+
+/* LARGE PHONE breakpoint */
+@media (max-width: #{$breakpoint__large_phone}) {
+   .site-header {
+      min-height: 80px;
+   }
+
+   .main-navigation {
+      min-height: 80px;
+
+      .site-title {
+         opacity: 0;
+         font-size: xx-small !important;
+         min-height: 40px;
+      }
+   }
+
+   // .menu-active {
+   //    top: 4.3% !important;
+   // }
+}
+
+/* Media Queries - "BANNER-SECTION"
+   ========================================================================== */
+
+/* LARGE PHONE breakpoint */
+@media (max-width: #{$breakpoint__large_phone}) {
+   .banner {
+      min-height: 720px !important;
+      height: auto !important;
+      width: 100vw;
+
+      &__video {
+         opacity: 0;
+      }
+
+      img {
+         width: 76%;
+      }
+   }
+}
+
+/* Media Queries - "STORY-SECTION"
+   ========================================================================== */
+
+/* DESKTOP breakpoint */
+@media (max-width: #{$breakpoint__desktop}) {
+   #story h2 {
+      width: 100%;
+   }
+}
+
+/* Media Queries - "CHARACTERS-SECTION"
+   ========================================================================== */
+
+/* LARGE PHONE breakpoint */
+@media (max-width: #{$breakpoint__large_phone}) {
+   .story #characters {
+      max-width: 920px;
+
+   }
+
+   .story #characters h3 {
+      text-align: center;
+      display: block;
+   }
+}
+
+
+/* SMALL PHONE breakpoint */
+@media (max-width: #{$breakpoint__small_phone}) {
+   .story #characters h3 {
+      font-size: 1.8em;
+   }
+
+   .swiper-slide figure img {
+      width: 60%;
+   }
+}
+
+/* Media Queries - "PLACE-SECTION"
+   ========================================================================== */
+
+/* LARGE PHONE breakpoint */
+@media (max-width: #{$breakpoint__large_phone}) {
+   .story #place h3 {
+      text-align: center;
+   }
+}
+
+/* SMALL PHONE breakpoint */
+@media (max-width: #{$breakpoint__small_phone}) {
+   .story #place h3 {
+      font-size: 2.1em;
+   }
+
+   .place {
+
+      &__big-cloud,
+      &__little-cloud {
+         display: none;
+      }
+   }
+}
+
+/* Media Queries - "STUDIO-SECTION"
+   ========================================================================== */
+
+/* SMALL TABLET breakpoint */
+@media (max-width:$breakpoint__small_tablet) {
+   #studio h2 {
+      font-size: 2rem;
+   }
+
+   #studio h2::before {
+      content: '';
+   }
+}
+
+/* Media Queries - "AWARD-SECTION"
+   ========================================================================== */
+
+/* DESKTOP breakpoint */
+@media (min-width: #{$breakpoint__desktop}) {
+   .award-section {
+      overflow: visible;
+   }
+}
+
+/* TABLET breakpoint */
+@media (max-width: #{$breakpoint__tablet}) {
+   .award-section {
+      flex-direction: column;
+      gap: 80px;
+
+      &::before,
+      &::after {
+         content: '';
+      }
+
+      &__container {
+         align-self: center;
+         max-width: 75%;
+      }
+
+      &__logo {
+         top: 0em;
+         align-self: center;
+         width: 400px;
+      }
+   }
+}
+
+/* SMALL TABLET breakpoint */
+@media (max-width: #{$breakpoint__small_tablet}) {
+   .award-section {
+      &__container {
+         max-width: 100%;
+      }
+   }
+}
+
+/* SMALL PHONE breakpoint */
+@media (max-width: #{$breakpoint__small_phone}) {
+   .award-section {
+      margin: 0 auto;
+
+      &__title--bg {
+         height: 110%;
+      }
+   }
+}

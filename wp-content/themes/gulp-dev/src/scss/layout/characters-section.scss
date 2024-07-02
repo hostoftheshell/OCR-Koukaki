@@ -1,0 +1,42 @@
+/* ==========================================================================
+   CHARACTERS-SECTION
+   ========================================================================== */
+.story #characters {
+    position: relative;
+    margin-bottom: 0;
+    z-index: 20;
+     text-align: left;
+     width: 100%;
+     flex-direction: column;
+}
+.story #characters div {
+    flex: none;
+    margin-bottom: 2em;
+}
+.story #characters h3 {
+    display: inline-block;
+}
+
+/* Characters Slider - CSS Styles
+   ========================================================================== */
+.swiper-container {
+    max-width: 100%;
+    opacity: 1;
+    margin-bottom: 7em;
+    overflow: hidden;
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+.swiper-slide figure {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
