@@ -1,0 +1,36 @@
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
+
+/* ANIMATIONS - Logo Bannière et Chats Menu
+   ========================================================================== */
+@keyframes banner__logo--up {
+    from {
+         opacity: 0;
+         transform: translateY(400px);
+    }
+    to {
+         opacity: 1;
+         transform: translateY(0);
+    }
+}
+@keyframes float {
+  0% {
+      transform: translate3d(0, 0, 0);
+  }
+  25% {
+      transform: translate3d(10px, -10px, 0);
+  }
+  50% {
+      transform: translate3d(20px, 0, 0);
+  }
+  75% {
+      transform: translate3d(10px, 10px, 0);
+  }
+  100% {
+      transform: translate3d(0, 0, 0);
+  }
+}
+
+
+

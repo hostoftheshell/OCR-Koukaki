@@ -1,0 +1,23 @@
+// Importation des styles abstraits
+@import './abstracts/variables/breakpoint';
+@import './abstracts/variables/colors';
+@import './abstracts/mixins/mixins';
+
+// Importation des styles de composants
+@import 'components/navigation';
+
+// Importation des styles de base
+@import './base/footer';
+
+// Importation des styles de mise en page
+@import './layout/banner-section';
+@import './layout/characters-section';
+@import './layout/place-section';
+@import './layout/award-section';
+
+// Importation des styles d'animations
+@import './animations/keyframes';
+@import './animations/animations';
+
+// Importation des styles responsives
+@import './layout/media';
