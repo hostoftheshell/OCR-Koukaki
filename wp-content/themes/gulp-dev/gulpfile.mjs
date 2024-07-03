@@ -3,7 +3,7 @@ import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
 import concat from 'gulp-concat';
-import uglify from 'gulp-uglify';
+// import uglify from 'gulp-uglify';
 // import cleanCSS from 'gulp-clean-css';
 import sourcemaps from 'gulp-sourcemaps';
 import browserSync from 'browser-sync';
@@ -50,7 +50,7 @@ function scripts() {
         .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
         .pipe(sourcemaps.init())
         .pipe(concat('main.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
         // .pipe(rename({ suffix: '.min' }))
         .pipe(rename({ extname: '.js' }))
         .pipe(sourcemaps.write('.'))

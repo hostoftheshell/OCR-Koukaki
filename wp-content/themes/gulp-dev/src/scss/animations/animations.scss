@@ -10,7 +10,7 @@
     }
 }
 
-/* Classe CSS pour la gestion de l'animation du BOUTON DU MENU
+/* Classes CSS pour la gestion de l'animation du BOUTON du MENU de NAVIGATION
    ========================================================================== */
 .menu-active .menu__button--line {
     background-color: transparent !important;
@@ -24,7 +24,7 @@
     transform: rotate(-45deg) translate3d(8px, -6px, 0);
 }
 
-/* Classes CSS pour la gestion de l'apparition DU MENU
+/* Classes CSS pour la gestion de l'apparition du MENU
    ========================================================================== */
 .menu__content {
     &.menu-active {
@@ -111,7 +111,7 @@
     }
 }
 
-/* Classe CSS pour la gestion des FLEURS du MENU de NAVIGATION
+/* Classes CSS pour la gestion des FLEURS du MENU de NAVIGATION
  ========================================================================== */
 .menu__content {
     ul {
@@ -168,7 +168,7 @@
     }
 }
 
-/* Classe CSS pour la gestion des CHATS du MENU de NAVIGATION
+/* Classes CSS pour la gestion des CHATS du MENU de NAVIGATION
    ========================================================================== */
 .menu__content {
     overflow: hidden;
@@ -203,7 +203,7 @@
             }
 
             &:nth-child(3)::after {
-                background-image: url("../images/Tenshi.png");
+                background-image: url("../images/Orenjiiro.png");
                 right: 15.5em;
                 top: 3.5em;
                 width: 105px;

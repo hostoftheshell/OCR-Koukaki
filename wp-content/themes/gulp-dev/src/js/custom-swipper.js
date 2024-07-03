@@ -1,3 +1,4 @@
+// Initialisation de 'Swiper' avec Paramètres Personnalisés
 document.addEventListener('DOMContentLoaded', () => {
     const swiper = new Swiper('.swiper-container', {
         // Réglages généraux

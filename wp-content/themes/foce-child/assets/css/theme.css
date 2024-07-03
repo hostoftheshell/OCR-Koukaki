@@ -1,11 +1,89 @@
 @charset "UTF-8";
 /* ==========================================================================
-   MIXINS
+   NAVIGATION
    ========================================================================== */
-/* mixin pour l'animation des fleurs
+#site-navigation {
+  padding: 10px;
+}
+
+.site-title {
+  text-align: center;
+}
+
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Bouton d'Ouverture du Menu
    ========================================================================== */
-/* mixin pour l'animation d'entrée des sections, des titres et du menu de navigation
+.menu__button {
+  position: absolute;
+  top: 34px;
+  right: calc(10vw + 15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 18px;
+  padding: 0px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.menu__button--line, .menu__button--line::before, .menu__button--line::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.menu__button--line::before {
+  top: -9px;
+}
+.menu__button--line::after {
+  top: 9px;
+}
+
+/* Styles CSS du menu de navigation et de son contenu
    ========================================================================== */
+.menu__content {
+  display: none;
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: calc(100vh - 80px);
+  margin-top: 9px;
+  background-color: #FFF5E9;
+  text-align: center;
+}
+.menu__content--footer {
+  margin-bottom: 40px;
+}
+.menu__content--logo {
+  width: 154px;
+  margin: 40px;
+  filter: drop-shadow(0px 0px 26.094px rgba(255, 92, 0, 0.6));
+}
+.menu__content ul {
+  display: block;
+}
+.menu__content ul li {
+  font-size: clamp(1.75rem, 3.214vw + 1.107rem, 4rem);
+  line-height: clamp(2.625rem, 3.679vw + 1.889rem, 5.2rem);
+}
+.menu__content ul li:not(:first-child) {
+  margin-top: 57px;
+}
+.menu__content ul li:hover {
+  text-shadow: 0px 0px 14px #FF5C00;
+  transition: text-shadow 0.3s ease-in;
+}
+
 /* ==========================================================================
    FOOTER
    ========================================================================== */
@@ -201,7 +279,7 @@
   animation: banner__logo--up 1500ms 0ms forwards, float 9s 1.8s infinite ease-in-out;
 }
 
-/* Classe CSS pour la gestion de l'animation du BOUTON DU MENU
+/* Classes CSS pour la gestion de l'animation du BOUTON du MENU de NAVIGATION
    ========================================================================== */
 .menu-active .menu__button--line {
   background-color: transparent !important;
@@ -215,7 +293,7 @@
   transform: rotate(-45deg) translate3d(8px, -6px, 0);
 }
 
-/* Classes CSS pour la gestion de l'apparition DU MENU
+/* Classes CSS pour la gestion de l'apparition du MENU
    ========================================================================== */
 .menu__content {
   animation: fadeInDown 1000ms ease-in-out 0.3s both;
@@ -404,7 +482,7 @@
   }
 }
 
-/* Classe CSS pour la gestion des FLEURS du MENU de NAVIGATION
+/* Classes CSS pour la gestion des FLEURS du MENU de NAVIGATION
  ========================================================================== */
 .menu__content ul li::before {
   content: "";
@@ -487,7 +565,7 @@
   }
 }
 
-/* Classe CSS pour la gestion des CHATS du MENU de NAVIGATION
+/* Classes CSS pour la gestion des CHATS du MENU de NAVIGATION
    ========================================================================== */
 .menu__content {
   overflow: hidden;
@@ -517,7 +595,7 @@
   animation: float 5s 0.3s infinite ease-in-out;
 }
 .menu__content ul li:nth-child(3)::after {
-  background-image: url("../images/Tenshi.png");
+  background-image: url("../images/Orenjiiro.png");
   right: 15.5em;
   top: 3.5em;
   width: 105px;
@@ -545,91 +623,6 @@
   100% {
     transform: rotate(360deg);
   }
-}
-
-/* ==========================================================================
-   NAVIGATION
-   ========================================================================== */
-#site-navigation {
-  padding: 10px;
-}
-
-.site-title {
-  text-align: center;
-}
-
-.menu-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Styles CSS pour le Bouton d'Ouverture du Menu
-   ========================================================================== */
-.menu__button {
-  position: absolute;
-  top: 34px;
-  right: calc(10vw + 15px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 18px;
-  padding: 0px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-.menu__button--line, .menu__button--line::before, .menu__button--line::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  border-radius: 1px;
-  background-color: #000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.menu__button--line::before {
-  top: -9px;
-}
-.menu__button--line::after {
-  top: 9px;
-}
-
-/* Styles CSS du Menu et de son contenu
-   ========================================================================== */
-.menu__content {
-  display: none;
-  position: relative;
-  z-index: 1;
-  width: 100vw;
-  height: calc(100vh - 80px);
-  margin-top: 9px;
-  background-color: #FFF5E9;
-  text-align: center;
-}
-.menu__content--footer {
-  margin-bottom: 40px;
-}
-.menu__content--logo {
-  width: 154px;
-  margin: 40px;
-  filter: drop-shadow(0px 0px 26.094px rgba(255, 92, 0, 0.6));
-}
-.menu__content ul {
-  display: block;
-}
-.menu__content ul li {
-  font-size: clamp(1.75rem, 3.214vw + 1.107rem, 4rem);
-  line-height: clamp(2.625rem, 3.679vw + 1.889rem, 5.2rem);
-}
-.menu__content ul li:not(:first-child) {
-  margin-top: 57px;
-}
-.menu__content ul li:hover {
-  text-shadow: 0px 0px 14px #FF5C00;
-  transition: text-shadow 0.3s ease-in;
 }
 
 /* ==========================================================================
@@ -755,7 +748,7 @@
   .award-section__logo {
     top: 0em;
     align-self: center;
-    width: 400px;
+    width: 360px;
   }
 }
 /* SMALL TABLET breakpoint */

@@ -1,9 +1,3 @@
-/* ==========================================================================
-   MIXINS
-   ========================================================================== */
-
-/* mixin pour l'animation des fleurs
-   ========================================================================== */
 @mixin flower-rotation($duration: 15s, $timing-function: linear) {
     @keyframes rotate {
         0% {
@@ -19,8 +13,6 @@
     transform-origin: center;
 }
 
-/* mixin pour l'animation d'entrée des sections, des titres et du menu de navigation
-   ========================================================================== */
 @mixin fadeInEntry($name, $duration: .3s, $timing: ease-out, $delay: 0s, $translateY: 20px) {
     @keyframes #{$name} {
         0% {

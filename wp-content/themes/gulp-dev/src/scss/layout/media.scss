@@ -81,7 +81,6 @@
    }
 }
 
-
 /* SMALL PHONE breakpoint */
 @media (max-width: #{$breakpoint__small_phone}) {
    .story #characters h3 {
@@ -161,7 +160,7 @@
       &__logo {
          top: 0em;
          align-self: center;
-         width: 400px;
+         width: 360px;
       }
    }
 }
