@@ -12,21 +12,22 @@ const observer = new IntersectionObserver(handleIntersect, observerOptions);
 const elementsToObserve = document.querySelectorAll('.banner, .story, #characters, #place, #studio, .award-section');
 elementsToObserve.forEach(element => observer.observe(element));
 
-// Gére les éléments intersectés
+// Gère les éléments intersectés
 function handleIntersect(entries, observer) {
     entries.forEach(entry => {
         if (entry.isIntersecting) { // Si l'élément intersecte le viewport
             console.log('Élément en intersection :', entry.target);
-            animateEntry(entry); // Appele la fonction pour animer l'entrée
+            animateEntry(entry); // Appel la fonction pour animer l'entrée
             observer.unobserve(entry.target); // Arrête d'observer cet élément
         }
     });
 }
 // Fonction d'animation principale pour l'apparition des éléments
 function animateEntry(entry) {
-    animateSectionEntry(entry); // Appele la fonction d'animation pour les sections
-    animateTitleEntry(entry);   // Appele la fonction d'animation pour les titres
-    animateLogoEntry(entry);    // Appele la fonction d'animation pour les logos
+    animateSectionEntry(entry); // Appel la fonction d'animation pour les sections
+    animateTitleEntry(entry);   // Appel la fonction d'animation pour les titres
+    animateLogoEntry(entry);    // Appel la fonction d'animation pour les logos
+    animateParagraphEntry(entry); // Appel la fonction d'animation pour les paragraphes
 }
 
 // Fonction d'animation pour l'apparition des sections
@@ -79,7 +80,15 @@ function animateLogoEntry(entry) {
     if (targetLogo) {
         targetLogo.classList.remove('hidden-opacity'); // Retire l'opacité cachée
         targetLogo.classList.add('banner__logo--animated'); // Ajoute la classe d'animation du logo
-        console.log(targetLogo);
+    }
+}
+// Fonction d'animation pour l'apparition des paragraphes
+function animateParagraphEntry(entry) {
+    const targetParagraphs = entry.target.querySelectorAll('p');
+    if (targetParagraphs.length > 0) {
+        targetParagraphs.forEach(paragraph => {
+            paragraph.classList.add('paragraph__fade-in--down'); // Ajoute la classe d'animation des paragraphes
+        });
     }
 }
 

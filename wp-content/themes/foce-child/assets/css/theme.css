@@ -94,6 +94,21 @@
   content: "";
 }
 
+.paragraph__fade-in--down {
+  animation: fadeInDown 900ms ease-in 0.3s both;
+  background-color: transparent;
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ==========================================================================
    BANNER-SECTION
    ========================================================================== */
@@ -339,7 +354,7 @@
   }
 }
 
-/* Classe CSS pour la gestion de l'apparition des SECTIONS
+/* Classes CSS pour la gestion de l'apparition des SECTIONS
    ========================================================================== */
 .hidden-opacity {
   opacity: 0 !important;

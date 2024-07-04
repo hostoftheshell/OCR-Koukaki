@@ -7,3 +7,9 @@
 .site-footer::after {
     content: "";
 }
+
+
+.paragraph__fade-in--down {
+   @include fadeInEntry(fadeInDown, 900ms, ease-in, 0.3s, -100px);
+   background-color: transparent;
+}
